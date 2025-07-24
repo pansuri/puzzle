@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puzzle Quest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="welcome-screen">
+    <h1>🧩 Puzzle Quest</h1>
+    <p>Masukkan namamu untuk mulai bermain:</p>
+    <input type="text" id="playerName" placeholder="Nama kamu..." />
+	
+	<p>Pilih tingkat kesulitan:</p>
+<select id="level" onchange="setLevel(this.value)">
+  <option value="beginner">🟢 Beginner</option>
+  <option value="advanced">🟡 Advanced</option>
+  <option value="expert">🔴 Expert</option>
+</select>
+
+<p>Pilih ukuran puzzle:</p>
+<select id="gridSize">
+  <option value="3">3 x 3</option>
+  <option value="4">4 x 4</option>
+  <option value="5">5 x 5</option>
+  <option value="6">6 x 6</option>
+  <option value="7">7 x 7</option>
+  <option value="8">8 x 8</option>
+  <option value="9">9 x 9</option>
+  <option value="10">10 x 10</option>
+  <option value="11">11 x 11</option>
+  <option value="12">12 x 12</option>
+  <option value="13">13 x 13</option>
+  <option value="14">14 x 14</option>
+  <option value="15">15 x 15</option>
+</select>
+
+	
+    <button onclick="startGame()">Mulai</button>
+  </div>
+
+  <div id="game-screen" style="display: none;">
+    <div class="header">
+      <span id="greeting"></span>
+      <span>⏱️ Waktu: <span id="timer">0</span> detik</span>
+    </div>
+    <div id="puzzle-container" class="grid-3x3"></div>
+    <div class="footer">
+      <button onclick="restartGame()">🔄 Main Lagi</button>
+    </div>
+	
+	<div class="hint-container">
+		<button onclick="showHint()">👀 Lihat Gambar Asli (5 detik)</button>
+	</div>
+
+	<div id="hintOverlay" class="hint-hidden">
+		<img id="hintImage" src="puzzle1.jpg" alt="Gambar Asli" />
+	</div>
+	
+  </div>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
