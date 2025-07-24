@@ -62,6 +62,34 @@ body {
   }
 }
 
+#puzzle-container {
+  display: grid;
+  gap: 1px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 100vw;
+  max-height: 100vw;
+  overflow: hidden;
+  touch-action: none;
+}
+
+@media (max-width: 480px) {
+  .header, .footer, #greeting {
+    font-size: 0.9em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
+
+  #hintOverlay img {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+}
+
 button {
   padding: 0.6em 1.2em;
   font-size: 1.1em;
@@ -91,10 +119,10 @@ button:hover {
 }
 
 .tile {
-  width: var(--tile-size);
-  height: var(--tile-size);
+  width: calc(100vw / var(--grid-size));
+  height: calc(100vw / var(--grid-size));
   background-image: url("puzzle1.jpg");
-  background-size: calc(var(--tile-size) * var(--grid-size)) calc(var(--tile-size) * var(--grid-size));
+  background-size: 100vw 100vw;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
