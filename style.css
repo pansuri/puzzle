@@ -1,24 +1,50 @@
 body {
-  font-family: sans-serif;
-  background: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background: url('bg_laptop.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+  padding: 3vh 4vw;
   text-align: center;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#game-board {
-  width: 600px;
-  height: 600px;
-  margin: auto;
+.grid-menu {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  border: 3px solid #333;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2vw;
+  margin-bottom: 5vh;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.piece {
-  width: 200px;
-  height: 200px;
-  background-size: 600px 600px;
-  border: 1px solid #999;
-  cursor: grab;
+.row-bawah {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3vw;
+}
+
+.menu-img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.menu-img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .menu-img {
+    max-width: 130px;
+  }
 }
